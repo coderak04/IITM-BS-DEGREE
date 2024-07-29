@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Student Details</title>
+</head>
+
+<body>
+  <h1>Student Details</h1>
+  <table border="2" style="border-collapse: collapse;" ,id="student-details-table">
+    <tr>
+      <th>Student Id</th>
+      <th>Course Id</th>
+      <th>Marks</th>
+    </tr>
+
+    {% for row in list %}
+    <tr>
+      {% for cell in row %}
+      <td>{{ cell }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="2" style="text-align:center">Total Marks</td>
+      <td>{{ total }}</td>
+    </tr>
+  </table><br><br>
+  <a href="/">Go Back</a>
+</body>
+
+</html>

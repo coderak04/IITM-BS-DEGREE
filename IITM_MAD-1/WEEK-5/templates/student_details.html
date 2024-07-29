@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Student Details</title>
+</head>
+
+<body>
+  <h1>Student Details</h1>
+  <table id='personal-details'>
+    <tr>
+      <th>Roll Number</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    <tr>
+      <td>{{student_id.roll_number}}</td>
+      <td>{{student_id.first_name}}</td>
+      <td>{{student_id.last_name}}</td>
+    </tr>
+  </table>
+  {% if courses|length == 0%}
+  <h1>Student has not registered for any courses</h1>
+  <a href="/">Go back</a>
+  {%else%}
+</table>
+  <h1>Enrollment List</h1>
+  <table id='enroll-table'>
+    <tr>
+      <th>S. No.</th>
+      <th>Course Code</th>
+      <th>Course Name</th>
+      <th>Course Description</th>
+    </tr>
+    {%for i in range(courses|length)%}
+    <tr>
+      <td>{{i+1}}</td>
+      <td>{{courses[i].course_code}}</td>
+      <td>{{courses[i].course_name}}</td>
+      <td>{{courses[i].course_description}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+  <a href="/">Go back</a>
+  {%endif%}
+</body>
+
+</html>

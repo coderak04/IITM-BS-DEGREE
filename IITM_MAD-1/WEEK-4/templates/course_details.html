@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Course Details</title>
+</head>
+
+<body>
+  <h1>Course Details</h1>
+  <table border="2" style="border-collapse: collapse;" id="course-details-table">
+    <tr>
+      <th>Average Marks</th>
+      <th>Maximum Marks</th>
+    </tr>
+    <tr>
+      <td>{{average_marks}}</td>
+      <td>{{max_marks}}</td>
+    </tr>
+  </table>
+  <img src="{{ url_for('static', filename='histogram.png') }}" alt="histogram"><br><br>
+  <a href="/">Go Back</a>
+</body>
+
+</html>
